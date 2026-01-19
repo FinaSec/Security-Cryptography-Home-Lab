@@ -19,5 +19,9 @@ in encrypted data.
 - ECB mode preserves structural patterns in encrypted images
 - Weak or partially known keys significantly reduce cryptographic security
 
+  Security Takeaway
+Why ECB should not be used for sensitive data
+
 ## Status
-Screenshots and encrypted artifacts will be added after validation across multiple systems.
+(Screenshot: ECB encrypted image showing visible patterns)
+
