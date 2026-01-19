@@ -1,20 +1,30 @@
 Title
 Security Cryptography Home Lab
 
-Overview
-This repository documents my cryptography focused home lab work, including concept notes, security analysis, and hands on experiments. The goal is to understand how cryptographic systems work in practice and how implementation choices can create or prevent real security failures.
+## Overview
+This repository documents hands-on cryptography experiments focused on understanding
+how encryption works in practice, how implementation choices affect security, and why
+some cryptographic modes are considered unsafe in real-world systems.
 
-Focus Areas
-Block ciphers and security properties
-Stream ciphers, nonces, and IV usage
-Cipher modes and pattern leakage
-Common implementation failures such as padding oracle conditions
-Practical tooling using OpenSSL and VM based environments
+The lab work emphasizes practical execution using OpenSSL, hex editors, and controlled
+experiments to demonstrate cryptographic weaknesses such as pattern leakage and weak keys.
 
-Repository Layout
-notes conceptual notes and security insights
-labs hands on experiments with steps evidence and results
-assets diagrams screenshots and supporting visuals
+## Focus Areas
+- Block and stream cipher fundamentals
+- AES encryption and decryption using OpenSSL
+- ECB mode weaknesses and pattern leakage
+- CBC mode behavior and randomness
+- Key entropy and brute-force feasibility
 
-Status
-Foundation notes added. Hands on labs will be added as experiments are completed.
+## Lab Environment
+- Host OS: macOS
+- Tools: OpenSSL, Hex Fiend, Cryptool
+- File types: Images, encrypted artifacts, hex-edited binaries
+
+## Repository Structure
+- `notes/` — Conceptual cryptography notes and foundations
+- `labs/` — Hands-on cryptography experiments with documented steps and results
+
+## Status
+Initial cryptography labs in progress. Additional experiments and artifacts will be added
+as the lab environment expands.
