@@ -36,6 +36,13 @@ Security Takeaway
 
 ECB mode should not be used for sensitive or structured data because it leaks patterns that can reveal information about the original plaintext.
 
-Screenshots
+##  Evidence
+Screenshots in the screenshots/ directory document:
+- AES-128 key generation
+- ECB encryption and decryption
+- Pattern leakage in ECB-encrypted data
+- Successful plaintext recovery using Cryptool
 
-Screenshots demonstrating encryption, hex editing, and pattern leakage are stored in the screenshots/ directory.
+
+
+
