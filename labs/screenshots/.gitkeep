@@ -1,1 +1,11 @@
-Placeholder for lab screenshots
+## Evidence and Artifacts
+
+The following screenshots will be added to demonstrate the lab execution:
+
+- Encryption command execution in terminal
+- Decryption command execution in terminal
+- Encrypted image file creation
+- Decrypted image successfully restored
+- Hex editor showing ECB header manipulation
+- Visual pattern leakage in ECB-encrypted image
+
