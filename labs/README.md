@@ -1,6 +1,9 @@
-Labs Index
-Hands on labs will be added here as experiments are completed. Each lab will include objectives steps evidence results and lessons learned.
+# Cryptography Labs
 
+[Back to the repository overview](../README.md)
 
- Lab 01: AES ECB Encryption and Decryption  
-  Demonstrates AES-128 encryption with ECB mode, pattern leakage, and key handling using OpenSSL.
+| Lab | Focus | Resources |
+| --- | --- | --- |
+| 01: AES-128 ECB analysis | Encryption, decryption, key handling, and ECB limitations | [Walkthrough](lab-01-aes-ecb-encryption/README.md) · [Commands](lab-01-aes-ecb-encryption/commands.md) |
+
+[Supporting screenshots](screenshots)
