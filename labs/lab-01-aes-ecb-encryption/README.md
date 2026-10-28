@@ -1,48 +1,52 @@
-Lab: AES-128 ECB Encryption Analysis
+# Lab 01: AES-128 ECB Encryption Analysis
 
-Objective
-This lab demonstrates AES-128 encryption and decryption using OpenSSL and highlights the security weaknesses of ECB mode when encrypting structured data such as images.
+[Back to the lab index](../README.md) · [OpenSSL commands](commands.md)
 
-Tools Used
-OpenSSL
+## Objective
 
-Hex Fiend (hex editor)
+Explore AES-128 encryption and decryption using OpenSSL, and examine why ECB mode can expose patterns in structured plaintext.
 
-CrypTool (online cryptographic analysis)
+## Tools
 
-Lab Overview
-An image file was encrypted using AES-128 in ECB mode and later decrypted using the same key. Hex editing was used to restore file headers and analyze how ECB mode preserves visual patterns in encrypted data.
+- OpenSSL
+- Hex Fiend for hexadecimal file inspection
+- CrypTool for cryptographic analysis
 
-Methodology
-Encrypt a bitmap image using AES-128 in ECB mode.
+## Lab activities
 
-Decrypt the image using the same encryption key.
+The lab record describes image-file encryption and decryption, file-header inspection and modification, and CrypTool analysis. The command record uses an image named with a JPEG extension, while the header-restoration exercise concerns bitmap data. These should be interpreted as separate parts of the work.
 
-Modify the encrypted file header using a hex editor.
+1. Generate a 128-bit AES key.
+2. Encrypt an image file using AES-128 in ECB mode.
+3. Decrypt the ciphertext using the same key.
+4. Inspect file structure and explore header restoration with a hex editor.
+5. Review ECB behavior and plaintext recovery in CrypTool.
 
-Observe how patterns remain visible in the encrypted image.
+## Observations and interpretation
 
-Validate results using CrypTool analysis.
+- The lab records encryption and decryption using the same AES key.
+- Under a fixed key, ECB maps identical plaintext blocks to identical ciphertext blocks. This can reveal repeated structure.
+- A visual image demonstration requires suitable uncompressed pixel data and a valid image header. Compressed JPEG data or Base64-encoded ciphertext does not automatically produce a recognizable encrypted image.
+- Restoring an image header is a visualization step, not decryption.
+- Plaintext recovery in a constrained teaching exercise does not establish that a randomly generated AES-128 key can be feasibly brute-forced.
 
-Key Observations
+## Supporting evidence
 
-AES encryption and decryption correctly restore original data when the correct key is used.
+The [screenshot collection](../screenshots) contains records of key generation, encryption, decryption, header editing, and CrypTool work.
 
-ECB mode preserves structural patterns in encrypted images.
+| Evidence | Screenshot |
+| --- | --- |
+| AES key generation | [Key generation](../screenshots/02-generate-aes-128-key.p.png) |
+| ECB text analysis | [Encrypted text patterns](../screenshots/04-ecb-encrypted-text-patterns.png) |
+| OpenSSL decryption | [Decryption result](../screenshots/05-aes-128-ecb-decryption-success.png) |
+| Header editing | [Bitmap header restoration](../screenshots/05-ecb-bmp-header-restored-hex.png) |
+| File verification | [Verification after decryption](../screenshots/06_ecb_file_verification_after_decryption.png) |
+| CrypTool analysis | [Decrypted text](../screenshots/07-cryptool-ecb-decrypted-text.png) · [Recovered plaintext](../screenshots/08-cryptool-ecb-plaintext-recovered.png) |
 
-Weak or partially known keys significantly reduce cryptographic security.
+## Lessons learned
 
-Security Takeaway
+The mode of operation affects what encryption reveals about plaintext. ECB is useful here for studying repeated-block behavior. File format, output encoding, and verification steps must also be documented to interpret an experiment correctly.
 
-ECB mode should not be used for sensitive or structured data because it leaks patterns that can reveal information about the original plaintext.
+## Limitations
 
-##  Evidence
-Screenshots in the screenshots/ directory document:
-- AES-128 key generation
-- ECB encryption and decryption
-- Pattern leakage in ECB-encrypted data
-- Successful plaintext recovery using Cryptool
-
-
-
-
+This page summarizes the existing lab record and screenshots. The original input file and ciphertext are not included alongside the walkthrough, so reproducing the commands requires supplying a local input file. The encryption experiment was not rerun during this documentation update.
